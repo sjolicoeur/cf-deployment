@@ -28,6 +28,13 @@
   path: /instance_groups/name=database/jobs/-
   value:
     name: postgres
+    custom_provider_definitions:
+    - name: postgres_dns_aliases
+      type: postgres_dns_aliases
+    provides:
+      postgres_dns_aliases:
+        aliases:
+        - domain: sql-db.service.cf.internal
     properties:
       databases:
         databases:
